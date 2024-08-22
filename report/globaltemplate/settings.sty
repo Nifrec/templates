@@ -1,0 +1,67 @@
+% Option: use the default style for theorems (and lemmas, definitions, etc.),
+% rather than fancy boxed ones.
+\newif\ifsimpletheorems
+\DeclareOption{simpletheorems}{\simpletheoremstrue}
+
+% Option: load my macros for using flagderiv with natural
+% language paragraphs.
+\newif\ifflagshort
+\DeclareOption{flagshort}{\flagshorttrue}
+
+\ProcessOptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuration of packages etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{references.bib}
+
+\hypersetup{%
+	colorlinks=true,
+	linkcolor=blue,
+	linkbordercolor={0 0 1}
+}
+
+\lstset{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \ttfamily,
+    keywordstyle    = \color{blue}\ttfamily,
+    stringstyle     = \color{green}\ttfamily,
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+\ifsimpletheorems
+    \theoremstyle{plain}
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{corollary}[theorem]{Corollary}
+\else
+    \RequirePackage{mdframed}
+    \mdfdefinestyle{theoremstyle}{%
+        linecolor=gray,linewidth=2pt,%
+        frametitlerule=true,%
+        frametitlebackgroundcolor=gray!20,%
+        innertopmargin=\topskip,%
+        frametitleaboveskip=1pt,%
+        frametitlebelowskip=0.5pt,%
+    }
+    \mdtheorem[style=theoremstyle]{theorem}{Theorem}[section]
+    \mdtheorem[style=theoremstyle]{lemma}[theorem]{Lemma}
+    \mdtheorem[style=theoremstyle]{corollary}[theorem]{Corollary}
+    \mdtheorem[style=theoremstyle]{definition}[theorem]{Definition}
+\fi
+% Examples and remarks always use the simpler box-less style.
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\ifflagshort
+    \RequirePackage{flagderiv}
+    \renewcommand{\introsymb}{\textbf{Assume}}
+    \newcommand{\fass}[1]{\introduce*{}{{#1}}{}}
+    \newcommand{\ftext}[1]{\step*{}{\text{\parbox{0.75\textwidth}{#1}}}{}}
+    \newcommand{\fmath}[1]{\step*{}{#1}{}}
+    \newcommand{\fconc}[1]{\conclude*{}{#1}{}}
+\fi

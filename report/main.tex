@@ -1,0 +1,21 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage{globaltemplate/packages}
+\usepackage{globaltemplate/macros}
+% Possible options to `globaltemplate/settings`:
+%   `simpletheorems` : do not put boxes around theorems, lemmas, etc.
+%   `flagshort`      : load macros for writing paragraphs in flagderiv.
+\usepackage{globaltemplate/settings}
+\usepackage{local}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{}
+\author{Lulof Pirée}
+\date{\today}
+
+% Reminder: you can always wrap slowly compiling subfiles
+% in a `\iffastcomp ... \else ... \fi` construct.
+
+\begin{document}
+    \printbibliography[heading=bibintoc,title={References}]
+\end{document}
