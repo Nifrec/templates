@@ -11,7 +11,7 @@ then you can resynchronise your project later with the template
 if either of the two happen to change.
 
 ## Available templates:
-* `report`: template for a mathematical article or homework assignment.
+* `article`: template for a mathematical article or a homework assignment.
     Comes a lot of packages (esp. for mathematics) 
     macros (e.g., for category theory) as well as configures many settings,
     such as paragraph indents, the looks of theorems, etc.
