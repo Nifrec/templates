@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file will not be synchronised to the default templates.
+% Put project-specific packages, macros and settings in here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{local}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Often used packages, uncomment to use.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{prftree}
+%\RequirePackage{mathabx}
+%\RequirePackage{wasysym}
+%\RequirePackage{helvet}
+%\RequirePackage{blkarray}
+%\RequirePackage[normalem]{ulem}
+%\RequirePackage{stmaryrd}
+%\RequirePackage{flagderiv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Toggle to switch off slow compiling packages and macros
+% to speed up compiling drafts. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\iffastcomp
+\fastcomptrue
+\iffastcomp
+\else
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros for entire frames.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First argument is title, second is subtitle.
+\newcommand{\firstframe}[2]{%
+    \begin{frame}[plain]%
+        \begin{center}%
+            \begin{tcolorbox}[colback=lightGreen, colframe=darkGreen]%
+                \centering%
+                {\Huge {\textbf{#1}%
+                    \vspace{10pt}
+                    \\{#2}}} \\%
+                \vspace{10pt}%
+                {\large Lulof Pirée}\\%
+                \textnormal%
+                \date%
+            \end{tcolorbox}%
+        \end{center}%
+    \end{frame}%
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom macros.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
