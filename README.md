@@ -1,7 +1,7 @@
 # LaTeX templates
 This is Lulof Pirée's personal collection of LaTeX templates.
 These templates are particularly practical when used in conjunction
-with the template-manager `temman`.
+with the template-manager [`temman`](https://github.com/Nifrec/temman.git).
 
 Every subdirectory of `templates` is another template.
 When you wish to create a new LaTeX project, you can copy one of
