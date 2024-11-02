@@ -109,7 +109,7 @@
 % Category theory
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\catname}[1]{\mathbf{#1}}
-\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\cat}[1]{\mathscr{#1}}
 % \DeclareMathOperator* does not work since the command has already
 % been declared in a package. \operatorname* ensures it has the
 % same spacing as \DeclareMathOperator*
@@ -133,9 +133,14 @@
 
 % Often used concrete pieces of data
 \newcommand{\id}{\mathsf{Id}}
+\newcommand{\termobj}{\top}
+\newcommand{\toterm}[1]{\mathbf{!}_{#1}} % Unique arrow to term object.
+\newcommand{\initobj}{\bot}
+\newcommand{\toinit}[1]{\mathbf{?}_{#1}} % Unique arrow to init object.
 \newcommand{\prone}{\pi_1}
 \newcommand{\prtwo}{\pi_2}
 \newcommand{\oneset}{\mathbbm{1}}     % The canonical singleton set.
+\newcommand{\oneelem}{\ast}           % The only element of the singleton set.
 \newcommand{\twoset}{\mathbbm{2}}     % The canonical 2-element set.
 \newcommand{\mon}{\monoid{M}}
 \newcommand{\nmon}{\monoid{N}}
@@ -146,13 +151,19 @@
 \newcommand{\epi}{\twoheadrightarrow}
 \newcommand{\mono}{\rightarrowtail}
 \newcommand{\iso}{\overset{\sim}{\rightarrow}}
+\newcommand{\natiso}{\tilde{\Rightarrow}}
 \newcommand{\biiso}{\overset{\sim}{\longleftrightarrow}}
 \newcommand{\embed}{\hookrightarrow}
 
 % Actual categories
+\newcommand{\CA}{\cat{A}}
+\newcommand{\CB}{\cat{B}}
 \newcommand{\CC}{\cat{C}}
 \newcommand{\CD}{\cat{D}}
 \newcommand{\CE}{\cat{E}}
+\newcommand{\CF}{\cat{F}}
+\newcommand{\CI}{\cat{I}}
+\newcommand{\CJ}{\cat{J}}
 \newcommand{\Set}{\ensuremath{\catname{Set}}}
 \newcommand{\Mon}{\catname{Mon}} % Category of monoids and homomorphisms.
 \newcommand{\Cat}{\catname{Cat}}
