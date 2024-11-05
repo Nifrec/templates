@@ -60,9 +60,22 @@
         frametitlebelowskip=0.5pt,%
     }
     \mdtheorem[style=theoremstyle]{theorem}{Theorem}[section]
-    \mdtheorem[style=theoremstyle]{lemma}[theorem]{Lemma}
-    \mdtheorem[style=theoremstyle]{corollary}[theorem]{Corollary}
-    \mdtheorem[style=theoremstyle]{definition}[theorem]{Definition}
+    % Without these aliases, and putting [theorem] instead
+    % of [lemma], [corollary], [definition] below,
+    % cleverref would call everything a "theorem".
+    \newaliascnt{lemma}{theorem}
+    \mdtheorem[style=theoremstyle]{lemma}[lemma]{Lemma}
+    \aliascntresetthe{lemma}
+    \crefname{lemma}{lemma}{lemmas}
+
+    \newaliascnt{corollary}{theorem}
+    \mdtheorem[style=theoremstyle]{corollary}[corollary]{Corollary}
+    \aliascntresetthe{corollary}
+    \crefname{corollary}{corollary}{corollarys}
+    \newaliascnt{definition}{theorem}
+    \mdtheorem[style=theoremstyle]{definition}[definition]{Definition}
+    \aliascntresetthe{definition}
+    \crefname{definition}{definition}{definitions}
 \fi
 % Examples and remarks always use the simpler box-less style.
 \theoremstyle{definition}
